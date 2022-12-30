@@ -40,12 +40,12 @@ function ViewDoc(props) {
           ))}
         </Document> */}
       </Container>
-      {/* <iframe
+      <iframe
         src={location.state.pdfurl}
         title={location.state.pdfurl}
         width="700"
         className="myiframe"
-      /> */}
+      />
     </div>
   );
 }
