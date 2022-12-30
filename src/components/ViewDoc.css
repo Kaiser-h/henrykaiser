@@ -1,0 +1,22 @@
+
+.viewdoc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #0b1f2e; */
+    padding: 5rem 0;
+  }
+  
+  .co1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+
+  .myiframe{
+    width: 100%;
+    height: 100vh;
+  }
