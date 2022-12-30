@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+// import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 
 function ViewDoc(props) {
   const location = useLocation();
-  const [numPages, setNumPages] = useState(null);
+  // const [numPages, setNumPages] = useState(null);
 
   const navigate = useNavigate();
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+  // function onDocumentLoadSuccess({ numPages }) {
+  //   setNumPages(numPages);
+  // }
 
   return (
     <div className="viewdoc">
@@ -27,7 +27,7 @@ function ViewDoc(props) {
         </Container>
       </Navbar>
       <Container className="co1">
-        <Document
+        {/* <Document
           file={location.state.pdfurl}
           onLoadSuccess={onDocumentLoadSuccess}
         >
@@ -38,7 +38,7 @@ function ViewDoc(props) {
               width="800"
             />
           ))}
-        </Document>
+        </Document> */}
       </Container>
       {/* <iframe
         src={location.state.pdfurl}
