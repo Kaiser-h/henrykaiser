@@ -1,13 +1,27 @@
 import React, { useState } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import { pdfjs } from 'react-pdf';
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+
+
+// import path from 'path';
+// import fs from 'fs';
+
+import { pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+
+
+// const pdfjsDistPath = path.dirname(require.resolve('pdfjs-dist/package.json'));
+// const pdfWorkerPath = path.join(pdfjsDistPath, 'build', 'pdf.worker.js');
+// fs.copyFileSync(pdfWorkerPath, './dist/pdf.worker.js');
+
+
+
+
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
