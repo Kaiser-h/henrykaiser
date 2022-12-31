@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
+import { pdfjs } from 'react-pdf';
+// // import { Document, Page } from "react-pdf/dist/cjs/entry.webpack";
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
-
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
