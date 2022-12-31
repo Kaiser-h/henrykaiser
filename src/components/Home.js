@@ -13,7 +13,6 @@ function Home(props) {
         <div className="container home_container">
           <div className="row gx-5 justify-content-center home_row">
             <div className="col col-xs-12 col-xl-4 left">
-            {/* <div className="equal"></div> */}
               <div>
                 <img src="images/home.jpg" alt="" className="home_img" />
               </div>

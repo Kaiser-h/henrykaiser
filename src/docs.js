@@ -13,13 +13,13 @@ export const mydocs = [
     text: "thejhqefkdjkfdhflsdf",
   },
   {
-    title: "Implementation of Principal Component Analysis (PCA) in R",
+    title: "Implementation of Principal Component Analysis (PCA) in Python",
     imageurl: "./images/figure_4.svg",
     pdfurl: "./pdfs/soon.pdf",
     text: "thejhqefkdjkfdhflsdf",
   },
   {
-    title: "Implementation of Principal Component Analysis (PCA) in Python",
+    title: "Implementation of Principal Component Analysis (PCA) in R",
     imageurl: "./images/figure_4.svg",
     pdfurl: "./pdfs/soon.pdf",
     text: "thejhqefkdjkfdhflsdf",
