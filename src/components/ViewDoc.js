@@ -32,7 +32,6 @@ function useWindowSize() {
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
-  const [file, setFile] = useState(location.state.pdfurl)
   const [height, width] = useWindowSize();
 
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ function ViewDoc(props) {
       <Container className="co1">
         <p>{location.state.pdfurl}</p>
         <Document
-          file={file}
+          file={location.state.pdfurl}
           onLoadSuccess={onDocumentLoadSuccess}
           options={options}
         >
