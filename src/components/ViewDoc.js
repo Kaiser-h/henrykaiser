@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
@@ -18,10 +18,22 @@ const options = {
 };
 
 
+function useWindowSize() {
+  const [size, setSize] = useState([window.innerHeight,window.innerWidth])
+  useEffect(()=>{
+    const handleResize = () =>{
+      setSize([window.innerHeight, Window.innerWidth]);
+    };
+    window.addEventListener("resize", handleResize);
+  },[]);
+  return size;
+}
+
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
-  const [file, setfile] = useState(location.state.pdfurl)
+  const [file, setFile] = useState(location.state.pdfurl)
+  const [height, width] = useWindowSize();
 
   const navigate = useNavigate();
 
@@ -49,6 +61,8 @@ function ViewDoc(props) {
             <Page
               key={`page_${index + 1}`}
               pageNumber={index + 1}
+              scale='0.8'
+              width={width}
             />
           ))}
         </Document>
