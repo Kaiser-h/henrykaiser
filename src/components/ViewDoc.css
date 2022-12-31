@@ -4,8 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #0b1f2e; */
-    padding: 5rem 0;
   }
   
   .co1{
@@ -16,7 +14,8 @@
   }
 
 
-  .myiframe{
-    width: 100%;
-    height: 100vh;
+  @media (min-width: 768px){
+    .viewdoc{
+      padding: 5rem 0;
+    }
   }

@@ -40,7 +40,7 @@ function Home(props) {
                   <i className="fab fa-linkedin"></i>
                 </a>
                 <a
-                  href="/path/to/github/profile"
+                  href="https://github.com/Kaiser-h"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

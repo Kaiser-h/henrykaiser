@@ -11,16 +11,17 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 
-
-
-
-
-
+const options = {
+  cMapUrl: 'cmaps/',
+  cMapPacked: true,
+  standardFontDataUrl: 'standard_fonts/',
+};
 
 
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
+  const [file, setfile] = useState(location.state.pdfurl)
 
   const navigate = useNavigate();
 
@@ -40,14 +41,14 @@ function ViewDoc(props) {
       <Container className="co1">
         <p>{location.state.pdfurl}</p>
         <Document
-          file={location.state.pdfurl}
+          file={file}
           onLoadSuccess={onDocumentLoadSuccess}
+          options={options}
         >
           {Array.from(new Array(numPages), (el, index) => (
             <Page
               key={`page_${index + 1}`}
               pageNumber={index + 1}
-              width="800"
             />
           ))}
         </Document>

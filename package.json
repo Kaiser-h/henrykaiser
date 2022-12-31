@@ -18,6 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "copy-cmaps": "node ./scripts/copy-cmaps.js",
+    "copy-standard-fonts": "node ./scripts/copy-standard-fonts.js",
+    "copy-worker": "node ./scripts/copy-worker.js",
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
