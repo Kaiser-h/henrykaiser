@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "./Home";
 import Portfolio from "./Portfolio";
-// import Contact from "./Contact";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 function Main(props) {
   return (
@@ -10,7 +10,7 @@ function Main(props) {
       <NavBar />
       <Home />
       <Portfolio />
-      {/* <Contact /> */}
+      <Footer/>
     </div>
   );
 }
