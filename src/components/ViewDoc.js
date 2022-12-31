@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { pdfjs } from 'react-pdf';
-// // import { Document, Page } from "react-pdf/dist/cjs/entry.webpack";
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
