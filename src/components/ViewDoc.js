@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 import "./ViewDoc.css";
 import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+// import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 
 
 // import path from 'path';
 // import fs from 'fs';
 
-import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// import { pdfjs } from 'react-pdf';
+// pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 
 // const pdfjsDistPath = path.dirname(require.resolve('pdfjs-dist/package.json'));
@@ -24,13 +24,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 function ViewDoc(props) {
   const location = useLocation();
-  const [numPages, setNumPages] = useState(null);
+  // const [numPages, setNumPages] = useState(null);
 
   const navigate = useNavigate();
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+  // function onDocumentLoadSuccess({ numPages }) {
+  //   setNumPages(numPages);
+  // }
 
   return (
     <div className="viewdoc">
@@ -42,7 +42,8 @@ function ViewDoc(props) {
         </Container>
       </Navbar>
       <Container className="co1">
-        <Document
+        <div><h1>{location.state.pdfurl}</h1></div>
+        {/* <Document
           file={location.state.pdfurl}
           onLoadSuccess={onDocumentLoadSuccess}
         >
@@ -53,7 +54,7 @@ function ViewDoc(props) {
               width="800"
             />
           ))}
-        </Document>
+        </Document> */}
       </Container>
       {/* <iframe
         src={location.state.pdfurl}
