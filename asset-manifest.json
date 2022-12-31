@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/henrykaiser/static/css/main.8338132f.css",
-    "main.js": "/henrykaiser/static/js/main.ff99f171.js",
+    "main.js": "/henrykaiser/static/js/main.afa216bf.js",
     "static/js/787.1ed0c42c.chunk.js": "/henrykaiser/static/js/787.1ed0c42c.chunk.js",
     "static/media/home.jpg": "/henrykaiser/static/media/home.cde5a03c88ee32c3f693.jpg",
     "index.html": "/henrykaiser/index.html",
     "main.8338132f.css.map": "/henrykaiser/static/css/main.8338132f.css.map",
-    "main.ff99f171.js.map": "/henrykaiser/static/js/main.ff99f171.js.map",
+    "main.afa216bf.js.map": "/henrykaiser/static/js/main.afa216bf.js.map",
     "787.1ed0c42c.chunk.js.map": "/henrykaiser/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8338132f.css",
-    "static/js/main.ff99f171.js"
+    "static/js/main.afa216bf.js"
   ]
 }
