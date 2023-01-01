@@ -38,7 +38,6 @@ function ViewDoc(props) {
   const [numPages, setNumPages] = useState(null);
   const width = useWindowSize();
   const [loading, setLoading] = useState(false);
-  const [pdfName, setpdfName] = useState();
   const navigate = useNavigate();
 
 
@@ -83,7 +82,7 @@ function ViewDoc(props) {
         </Spinner>
         :
         <Document
-        file={getFile(pdfName)}
+        file={getFile()}
         onLoadProgress={onLoading}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
