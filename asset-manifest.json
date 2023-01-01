@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/henrykaiser/static/css/main.72e32415.css",
-    "main.js": "/henrykaiser/static/js/main.7263858b.js",
+    "main.js": "/henrykaiser/static/js/main.8b0f71a6.js",
     "static/js/787.1ed0c42c.chunk.js": "/henrykaiser/static/js/787.1ed0c42c.chunk.js",
     "static/media/melectricity.pdf": "/henrykaiser/static/media/melectricity.f5db2ba609e876203280.pdf",
     "static/media/pcamatlab.pdf": "/henrykaiser/static/media/pcamatlab.0cc29626ba20e6d85d6c.pdf",
     "static/media/soon.pdf": "/henrykaiser/static/media/soon.0b22e6e991fed3b59b44.pdf",
     "index.html": "/henrykaiser/index.html",
     "main.72e32415.css.map": "/henrykaiser/static/css/main.72e32415.css.map",
-    "main.7263858b.js.map": "/henrykaiser/static/js/main.7263858b.js.map",
+    "main.8b0f71a6.js.map": "/henrykaiser/static/js/main.8b0f71a6.js.map",
     "787.1ed0c42c.chunk.js.map": "/henrykaiser/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72e32415.css",
-    "static/js/main.7263858b.js"
+    "static/js/main.8b0f71a6.js"
   ]
 }
