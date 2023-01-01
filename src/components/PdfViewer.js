@@ -38,10 +38,12 @@ function ViewDoc(props) {
   const [numPages, setNumPages] = useState(null);
   const width = useWindowSize();
   const [loading, setLoading] = useState(false);
-  const pdfName = location.state.pdfName;
+  const [pdfName, setpdfName] = useState();
   const navigate = useNavigate();
 
-  function getFile(pdfName) {
+
+  function getFile() {
+    const pdfName=localStorage.getItem("pdfName")
     if(pdfName==='pcamatlab'){
       return pcamatlab;
     }else if(pdfName==='melectricity'){
@@ -49,6 +51,12 @@ function ViewDoc(props) {
     }
    
   }
+  useEffect(()=>{
+    localStorage.setItem("pdfName", location.state.pdfName)
+  },[location.state.pdfName])
+
+
+
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
