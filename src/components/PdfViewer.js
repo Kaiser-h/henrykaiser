@@ -38,11 +38,11 @@ function ViewDoc(props) {
   const [numPages, setNumPages] = useState(null);
   const width = useWindowSize();
   const [loading, setLoading] = useState(false);
+  const [pdfName, setPdfName] = useState(location.state.pdfName)
   const navigate = useNavigate();
 
 
-  function getFile() {
-    const pdfName=localStorage.getItem("pdfName")
+  function getFile(pdfName) {
     if(pdfName==='pcamatlab'){
       return pcamatlab;
     }else if(pdfName==='melectricity'){
@@ -51,8 +51,12 @@ function ViewDoc(props) {
    
   }
   useEffect(()=>{
-    localStorage.setItem("pdfName", location.state.pdfName)
-  },[location.state.pdfName])
+    if (location.state.pdfName === null){
+      setPdfName(localStorage.getItem("pdfName"))
+    }else{
+      localStorage.setItem("pdfName", location.state.pdfName)
+    }
+  },[])
 
 
 
@@ -82,7 +86,7 @@ function ViewDoc(props) {
         </Spinner>
         :
         <Document
-        file={getFile()}
+        file={getFile(pdfName)}
         onLoadProgress={onLoading}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
