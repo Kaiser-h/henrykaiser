@@ -5,10 +5,14 @@ import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
-
+import { Spinner } from 'react-bootstrap';
 import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+import pcamatlab from './../pdfs/pcamatlab.pdf'
+import melectricity from './../pdfs/melectricity.pdf'
+import soon from './../pdfs/soon.pdf'
 
 
 const options = {
@@ -26,18 +30,33 @@ function useWindowSize() {
     };
     window.addEventListener("resize", handleResize);
   },[]);
-  return size;
+  return width;
 }
 
 function ViewDoc(props) {
   const location = useLocation();
   const [numPages, setNumPages] = useState(null);
-  const [height, width] = useWindowSize();
-
+  const width = useWindowSize();
+  const [loading, setLoading] = useState(false);
+  const pdfName = location.state.pdfName;
   const navigate = useNavigate();
+
+  function getFile(pdfName) {
+    if(pdfName==='pcamatlab'){
+      return pcamatlab;
+    }else if(pdfName==='melectricity'){
+      return melectricity;
+    }
+   
+  }
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
+    setLoading(false);
+  }
+
+  function onLoading() {
+    setLoading(false)
   }
 
   return (
@@ -50,20 +69,30 @@ function ViewDoc(props) {
         </Container>
       </Navbar>
       <Container className="co1">
+        {loading ? 
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+        :
         <Document
-          file={`./pdfs/${location.state.pdfName}.pdf`}
-          onLoadSuccess={onDocumentLoadSuccess}
-          options={options}
-        >
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              scale='0.8'
-              width={width}
-            />
-          ))}
-        </Document>
+        file={getFile(pdfName)}
+        onLoadProgress={onLoading}
+        onLoadSuccess={onDocumentLoadSuccess}
+        options={options}
+        loading={<Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>}
+      >
+        {Array.from(new Array(numPages), (el, index) => (
+          <Page
+            key={`page_${index + 1}`}
+            pageNumber={index + 1}
+            scale='0.8'
+            width={width}
+          />
+        ))}
+      </Document>
+      }
       </Container>
     </div>
   );
