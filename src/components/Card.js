@@ -10,7 +10,7 @@ function MyCard(props) {
       <div className="card-body">
         <h6 className="card-title">{props.title}</h6>
         <button type="button" className="btn btn-dark btncolor" onClick={() =>
-            navigate("viewdoc", { state: { pdfurl: props.pdfurl } })
+            navigate(`${props.pdfName}`, { state: { pdfName: props.pdfName } })
           }>View Project</button>
       </div>
     </div>

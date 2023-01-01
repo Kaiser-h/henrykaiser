@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./ViewDoc.css";
+import "./PdfViewer.css";
 import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -19,10 +19,10 @@ const options = {
 
 
 function useWindowSize() {
-  const [size, setSize] = useState([window.innerHeight,window.innerWidth])
+  const [width, setSize] = useState(window.innerWidth)
   useEffect(()=>{
     const handleResize = () =>{
-      setSize([window.innerHeight, Window.innerWidth]);
+      setSize(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
   },[]);
@@ -50,9 +50,8 @@ function ViewDoc(props) {
         </Container>
       </Navbar>
       <Container className="co1">
-        <p>{location.state.pdfurl}</p>
         <Document
-          file={location.state.pdfurl}
+          file={`./pdfs/${location.state.pdfName}.pdf`}
           onLoadSuccess={onDocumentLoadSuccess}
           options={options}
         >
@@ -65,12 +64,6 @@ function ViewDoc(props) {
             />
           ))}
         </Document>
-      {/* <iframe
-        src={location.state.pdfurl}
-        title={location.state.pdfurl}
-        width="700"
-        className="myiframe"
-      /> */}
       </Container>
     </div>
   );

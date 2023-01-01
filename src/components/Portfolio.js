@@ -15,7 +15,7 @@ function Portfolio(props) {
                 key={mydoc.title}
                 title={mydoc.title}
                 imageurl={mydoc.imageurl}
-                pdfurl={mydoc.pdfurl}
+                pdfName={mydoc.pdfName}
               />
             );
           })}
