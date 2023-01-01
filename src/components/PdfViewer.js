@@ -48,7 +48,7 @@ function ViewDoc(props) {
 
 useEffect(()=>{
   console.log(pathName)
-},[ap])
+},[pathName])
 
 function getFile(pathName) {
   if(pathName==='/pcamatlab'){
