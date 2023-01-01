@@ -14,13 +14,11 @@ import pcamatlab from './../pdfs/pcamatlab.pdf'
 import melectricity from './../pdfs/melectricity.pdf'
 import soon from './../pdfs/soon.pdf'
 
-
 const options = {
   cMapUrl: 'cmaps/',
   cMapPacked: true,
   standardFontDataUrl: 'standard_fonts/',
 };
-
 
 function useWindowSize() {
   const [width, setSize] = useState(window.innerWidth)
@@ -34,29 +32,24 @@ function useWindowSize() {
 }
 
 
-
 function ViewDoc(props) {
   const [numPages, setNumPages] = useState(null);
   const width = useWindowSize();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-
   const location = useLocation();
-
   const pathName = location.pathname
 
-useEffect(()=>{
-  console.log(pathName)
-},[pathName])
-
-function getFile(pathName) {
-  if(pathName==='/pcamatlab'){
-    return pcamatlab;
-  }else if(pathName==='/melectricity'){
-    return melectricity;
+  function getFile(pathName) {
+    if(pathName==='/pcamatlab'){
+      return pcamatlab;
+    }else if(pathName==='/melectricity'){
+      return melectricity;
+    }else{
+      return soon;
+    }
   }
-}
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);

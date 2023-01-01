@@ -14,20 +14,6 @@ function MyCard(props) {
           }>View Project</button>
       </div>
     </div>
-  {/* <Card style={{ width: "18rem"}}>
-      <Card.Img variant="top" src={props.imageurl} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Button
-          variant="primary"
-          onClick={() =>
-            navigate("viewdoc", { state: { pdfurl: props.pdfurl } })
-          }
-        >
-          View Project
-        </Button>
-      </Card.Body>
-    </Card> */}
     </div>
   );
 }
