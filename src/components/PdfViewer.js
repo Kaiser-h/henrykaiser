@@ -82,8 +82,8 @@ function ViewDoc(props) {
         options={options}
         loading={<Spinner animation="border" role="status">
         <span className="sr-only">Loading...</span>
-        externalLinkTarget={"_blank"}
       </Spinner>}
+      externalLinkTarget={"_blank"}
       >
         {Array.from(new Array(numPages), (el, index) => (
           <Page
