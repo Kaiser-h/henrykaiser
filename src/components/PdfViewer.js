@@ -45,27 +45,15 @@ function ViewDoc(props) {
   const location = useLocation();
 
   const pathName = location.pathname
-  console.log(location)
 
-  // function useFileName(pathName) {
-  //   const [pdfName, setPdfName] = useState(null)
-  //   useEffect(()=>{
-  //     if (locName === null){
-  //       setPdfName(localStorage.getItem("pdfName"))
-  //     }else{
-  //       localStorage.setItem("pdfName", locName)
-  //       setPdfName(locName)
-  //     }
-  //   },[])
-  //   return pdfName
-  // }
-
-  // const pdfNName = useFileName(locName);
+useEffect(()=>{
+  console.log(pathName)
+},[ap])
 
 function getFile(pathName) {
-  if(pathName==='henrykaiser/pcamatlab'){
+  if(pathName==='/pcamatlab'){
     return pcamatlab;
-  }else if(pathName==='henrykaiser/melectricity'){
+  }else if(pathName==='/melectricity'){
     return melectricity;
   }
 }
