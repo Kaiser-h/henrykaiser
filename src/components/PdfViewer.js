@@ -33,33 +33,41 @@ function useWindowSize() {
   return width;
 }
 
+
+
 function ViewDoc(props) {
-  const location = useLocation();
   const [numPages, setNumPages] = useState(null);
   const width = useWindowSize();
   const [loading, setLoading] = useState(false);
-  const [pdfName, setPdfName] = useState(location.state.pdfName)
   const navigate = useNavigate();
 
 
-  function getFile(pdfName) {
-    if(pdfName==='pcamatlab'){
-      return pcamatlab;
-    }else if(pdfName==='melectricity'){
-      return melectricity;
-    }
-   
+  const location = useLocation();
+
+  const locName = location.state.pdfName
+
+  function useFileName(locName) {
+    const [pdfName, setPdfName] = useState(null)
+    useEffect(()=>{
+      if (locName === null){
+        setPdfName(localStorage.getItem("pdfName"))
+      }else{
+        localStorage.setItem("pdfName", locName)
+        setPdfName(locName)
+      }
+    },[])
+    return pdfName
   }
-  useEffect(()=>{
-    if (location.state.pdfName === null){
-      setPdfName(localStorage.getItem("pdfName"))
-    }else{
-      localStorage.setItem("pdfName", location.state.pdfName)
-    }
-  },[])
 
+  const pdfNName = useFileName(locName);
 
-
+function getFile(pdfNName) {
+  if(pdfNName==='pcamatlab'){
+    return pcamatlab;
+  }else if(pdfNName==='melectricity'){
+    return melectricity;
+  }
+}
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -86,7 +94,7 @@ function ViewDoc(props) {
         </Spinner>
         :
         <Document
-        file={getFile(pdfName)}
+        file={getFile(pdfNName)}
         onLoadProgress={onLoading}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
