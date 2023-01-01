@@ -44,27 +44,28 @@ function ViewDoc(props) {
 
   const location = useLocation();
 
-  const locName = location.state.pdfName
+  const pathName = location.pathname
+  console.log(location)
 
-  function useFileName(locName) {
-    const [pdfName, setPdfName] = useState(null)
-    useEffect(()=>{
-      if (locName === null){
-        setPdfName(localStorage.getItem("pdfName"))
-      }else{
-        localStorage.setItem("pdfName", locName)
-        setPdfName(locName)
-      }
-    },[])
-    return pdfName
-  }
+  // function useFileName(pathName) {
+  //   const [pdfName, setPdfName] = useState(null)
+  //   useEffect(()=>{
+  //     if (locName === null){
+  //       setPdfName(localStorage.getItem("pdfName"))
+  //     }else{
+  //       localStorage.setItem("pdfName", locName)
+  //       setPdfName(locName)
+  //     }
+  //   },[])
+  //   return pdfName
+  // }
 
-  const pdfNName = useFileName(locName);
+  // const pdfNName = useFileName(locName);
 
-function getFile(pdfNName) {
-  if(pdfNName==='pcamatlab'){
+function getFile(pathName) {
+  if(pathName==='henrykaiser/pcamatlab'){
     return pcamatlab;
-  }else if(pdfNName==='melectricity'){
+  }else if(pathName==='henrykaiser/melectricity'){
     return melectricity;
   }
 }
@@ -94,7 +95,7 @@ function getFile(pdfNName) {
         </Spinner>
         :
         <Document
-        file={getFile(pdfNName)}
+        file={getFile(pathName)}
         onLoadProgress={onLoading}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
