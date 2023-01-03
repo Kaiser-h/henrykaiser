@@ -11,6 +11,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 import pcamatlab from './../pdfs/pcamatlab.pdf'
+import pcapython from './../pdfs/pcapython.pdf'
 import melectricity from './../pdfs/melectricity.pdf'
 import soon from './../pdfs/soon.pdf'
 
@@ -44,6 +45,8 @@ function ViewDoc(props) {
   function getFile(pathName) {
     if(pathName==='/pcamatlab'){
       return pcamatlab;
+    }else if(pathName==='/pcapython'){
+      return pcapython;
     }else if(pathName==='/melectricity'){
       return melectricity;
     }else{
