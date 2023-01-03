@@ -23,11 +23,11 @@ function Home(props) {
                 I am currently working as a research and teaching assistant at
                 the Kwame Nkrumah University of Science and Technology. I am
                 passionate about using statistical techniques to solve
-                real-world problems and am always looking for new opportunities
+                real-world problems, and I'm always looking for new opportunities
                 to learn and grow as a researcher.
               </p>
               <p>
-                When I'm not working or coding, I enjoy reading, playing sports,
+                When I'm not working or coding, I enjoy playing sports,
                 and spending time with my friends and family.
               </p>
               <div className="social-links">
