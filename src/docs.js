@@ -8,7 +8,7 @@ export const mydocs = [
     title:
       "Modelling the Hourly Consumption of Electricity during Period of Power Crisis",
     imageurl: "./images/electricity.svg",
-    pdfName: "melectricity",
+    pdfName: "electricity",
   },
   {
     title: "Implementation of Principal Component Analysis (PCA) in Python",
