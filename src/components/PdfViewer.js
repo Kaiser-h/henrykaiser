@@ -12,7 +12,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 import pcamatlab from './../pdfs/pcamatlab.pdf'
 import pcapython from './../pdfs/pcapython.pdf'
-import melectricity from './../pdfs/melectricity.pdf'
+import melectricity from './../pdfs/electricity.pdf'
 import soon from './../pdfs/soon.pdf'
 
 const options = {
